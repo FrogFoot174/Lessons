@@ -5,8 +5,10 @@
     <title>Document</title>
 </head>
 <body>
-    <?php foreach ($articles as $article): ?>
+        <?php foreach ($articles as $article): ?>
+    <div style="border: solid; border-color:  deepskyblue; width: 400px; margin-bottom: 25px">
         <?php echo $article['title']; ?>
-    <?php endforeach ?>
+    </div>
+        <?php endforeach ?>
 </body>
 </html>
