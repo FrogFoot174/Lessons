@@ -13,6 +13,8 @@ if (!empty ($_POST)) {
             $data['article'] = $res;
         }
     }
-    var_dump($data); die;
+
 }
-include __DIR__ . '/views/add_view.php';
+var_dump($data); die;
+
+//include __DIR__ . '/views/add_view.php';
