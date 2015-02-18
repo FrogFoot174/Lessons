@@ -6,15 +6,13 @@ if (!empty ($_POST)) {
     if (!empty($_POST['title'])) {
         $data['title'] = $_POST['title'];
     }
-
-    if  (!empty($_FILES)) {
+    if (!empty($_FILES)) {
         $res = File_upload('article');
         if (false !== $res) {
             $data['article'] = $res;
         }
     }
-
+    var_dump($data);
+    die;
 }
-var_dump($data); die;
-
-//include __DIR__ . '/views/add_view.php';
+include __DIR__ . '/views/add.php';

@@ -10,6 +10,6 @@
         <?php echo $article['title']; ?>
     </div>
         <?php endforeach ?>
-        <a href="../add.php">Добавьте новость сами</a>
+        <a href="./add.php">Добавьте новость сами</a>
 </body>
 </html>
