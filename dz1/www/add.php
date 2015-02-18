@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+require __DIR__ . '/models/news.php';
 require __DIR__ . '/functions/File_upload.php';
 if (!empty ($_POST)) {
     $data = [];
@@ -12,7 +12,10 @@ if (!empty ($_POST)) {
             $data['article'] = $res;
         }
     }
-    var_dump($data);
-    die;
+    if (isset($data['title']) and isset($data['article'])) {
+        News_insert($data);
+        header('Location: index.php');
+        die;
+    }
 }
 include __DIR__ . '/views/add.php';

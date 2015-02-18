@@ -8,5 +8,8 @@ function News_getAll ()
 
 function News_insert($data)
 {
-
+    $sql = "INSERT INTO articles
+            (title, path)
+            VALUES ('" . $data['title'] . "', '" . $data['article'] . "') ";
+    Sql_exec($sql);
 }
