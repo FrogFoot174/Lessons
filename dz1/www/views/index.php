@@ -7,9 +7,16 @@
 <body>
         <?php foreach ($articles as $article): ?>
     <div style="border: solid; border-color:  deepskyblue; width: 1025px; margin-bottom: 25px">
-        <img src="<?php echo '.' . $article['path']; ?>" alt=""/>
+        <a href=""><?php echo $article['title'];?></a>
     </div>
         <?php endforeach ?>
         <a href="./add.php">Добавьте новость сами</a>
 </body>
 </html>
+<?php //foreach ($articles as $article): ?>
+<!--    <div style="border: solid; border-color:  deepskyblue; width: 1025px; margin-bottom: 25px">-->
+<!--        --><?php //$artcls = file( '.' . $article['path']);
+//        echo $artcls[0] . '...';
+//        ?>
+<!--    </div>-->
+<?php //endforeach ?>
