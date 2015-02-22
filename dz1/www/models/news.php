@@ -6,7 +6,7 @@ class News_GetAll
     public function News_getAll()
     {
         $sql = 'SELECT * FROM articles';
-        $Sql_Connect = new Sql_Connect;
+        $Sql_Connect = new Sql_Connect('localhost', 'root', '', 'test');
         return $Sql_Connect->Sql_query($sql);
     }
 }
