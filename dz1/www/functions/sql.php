@@ -1,24 +1,30 @@
 <?php
 
-function Sql_connect()
-{
-    mysql_connect('localhost', 'root', '');
-    mysql_select_db('test');
-}
+class Sql_Connect {
 
-function Sql_query($sql)
-{
-    Sql_connect();
-    $res = mysql_query($sql);
-    $ret = [];
-    while (false!== $row = mysql_fetch_assoc($res)){
-        $ret[] = $row;
+    public function Sql_connect()
+    {
+        mysql_connect('localhost', 'root', '');
+        mysql_select_db('test');
     }
-    return $ret;
+
+    public  function Sql_query($sql)
+    {
+        $res = mysql_query($sql);
+        $ret = [];
+        while (false!== $row = mysql_fetch_assoc($res)){
+            $ret[] = $row;
+        }
+        return $ret;
+    }
 }
 
-function Sql_exec($sql)
+class Sql_Exe
 {
-    Sql_connect();
-    mysql_query($sql);
+    public function Sql_exec($sql)
+    {
+        $Sql_Connect = new Sql_Connect;
+        $Sql_Connect->Sql_connect();
+        mysql_query($sql);
+    }
 }

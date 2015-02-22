@@ -1,15 +1,24 @@
 <?php
 require_once __DIR__ . '/../functions/sql.php';
-function News_getAll ()
-{
-    $sql = 'SELECT * FROM articles';
-    return Sql_query($sql);
-}
 
-function News_insert($data)
+class News_GetAll
 {
-    $sql = "INSERT INTO articles
-            (title, path)
-            VALUES ('" . $data['title'] . "', '" . $data['article'] . "') ";
-    Sql_exec($sql);
+    public function News_getAll()
+    {
+        $sql = 'SELECT * FROM articles';
+        $Sql_Connect = new Sql_Connect;
+        return $Sql_Connect->Sql_query($sql);
+    }
+}
+class News_Ins
+{
+    public function News_insert($data)
+    {
+        $sql = "INSERT INTO articles
+                (title, path)
+                VALUES ('" . $data['title'] . "', '" . $data['article'] . "') ";
+
+        $Sql_Exec = new Sql_Exe;
+        $Sql_Exec->Sql_exec($sql);
+    }
 }

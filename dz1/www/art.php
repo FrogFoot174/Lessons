@@ -1,8 +1,11 @@
 <?php
 require __DIR__ . '/models/news.php';
-$articles = News_getAll();
+
+$News_GetAll = new News_GetAll;
+$articles = $News_GetAll->News_getAll();
+
 foreach ($articles as $article) {
-    if ($article['id'] !== $_GET[id]) {
+    if ($article['id'] !== $_GET['id']) {
         continue;
     }
     else {
