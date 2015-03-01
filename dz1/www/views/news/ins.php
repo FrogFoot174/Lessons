@@ -6,11 +6,11 @@
 </head>
 <body>
 <form action="./add.php" method="post" enctype="multipart/form-data">
-<label for="title">Заголовок</label>
-<input type="text" id="title" name="title"/>
-<label for="article">Ваш файл</label>
-<input type="file" id="article" name="article"/>
-<input type="submit" />
+    <label for="title">Заголовок</label>
+    <input type="text" id="title" name="title"/>
+    <label for="article">Ваш файл</label>
+    <input type="file" id="article" name="article"/>
+    <input type="submit" />
 </form>
 <a href="./">На главную</a>
 <br>

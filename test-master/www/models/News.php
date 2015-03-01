@@ -1,10 +1,14 @@
 <?php
-class News extends AbstractModel
+
+class News
+    extends AbstractModel
 {
+
     public $id;
-    public static  $title;
-    public static  $path;
+    public $title;
+    public $path;
 
     protected static $table = 'articles';
     protected static $class = 'News';
+
 }

@@ -1,15 +1,15 @@
 <?php
-require __DIR__ . '/models/news.php';
-
-$News_GetAll = new News_GetAll;
-$articles = $News_GetAll->News_getAll();
+require_once __DIR__ . '/aload.php';
+//$actionnews_getall = new actionNews_GetAll;
+$articles = News::getAll();
 
 foreach ($articles as $article) {
-    if ($article['id'] !== $_GET['id']) {
+    //  echo $article->id . '<br>' . $article->path;           die;     var_dump($article);
+    if ($article->id !== $_GET['id']) {
         continue;
     }
     else {
-        $view_Article = $article['path'];
-        include __DIR__ . '/views/art.php';
+        $ac = $article->path;
+        include __DIR__ . './views/news/one.php';
     }
 } ?>

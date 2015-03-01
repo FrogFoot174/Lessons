@@ -1,6 +1,5 @@
 <?php
-require __DIR__ . '/models/news.php';
-require __DIR__ . '/functions/File_upload.php';
+require_once __DIR__ . '/aload.php';
 if (!empty ($_POST)) {
     $data = [];
     if (!empty($_POST['title'])) {
