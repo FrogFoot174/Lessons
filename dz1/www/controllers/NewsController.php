@@ -4,9 +4,13 @@ class NewsController
 
     public function actionAll()
     {
-        $db = new DB_link;
-        $res = $db->query('SELECT * FROM articles');
-        var_dump($res);
+//        $db = new DB_link;
+//        $res = $db->query('SELECT * FROM articles');
+//        var_dump($res);
+
+        var_dump(NewsModel::findAll());
+        echo '<br>';
+
 //        die;
 //        $items = News::getAll();
 //        $view = new View;
@@ -16,10 +20,12 @@ class NewsController
 
     public function actionOne()
     {
-        $db = new DB_link;
-        $res = $db->query('SELECT * FROM articles WHERE id=:id', [':id' => $_GET['id']]);
-        var_dump($res);
-        die;
+        var_dump(NewsModel::findOneByPk($_GET['id']));
+
+//        $db = new DB_link;
+//        $res = $db->query('SELECT * FROM articles WHERE id=:id', [':id' => $_GET['id']]);
+//        var_dump($res);
+//        die;
 
 //        $id = $_GET['id'];
 //        $item = News::getOne($id);
@@ -30,7 +36,7 @@ class NewsController
 
     public function actionIns()
     {
-        $ins_flag = News::insertDB();
+        $ins_flag = NewsModel::insertDB();
         $view = new View;
         $view->display('news/ins.php');
     }

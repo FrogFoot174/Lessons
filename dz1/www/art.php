@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/aload.php';
 //$actionnews_getall = new actionNews_GetAll;
-$articles = News::getAll();
+$articles = NewsModel::getAll();
 
 foreach ($articles as $article) {
     //  echo $article->id . '<br>' . $article->path;           die;     var_dump($article);
